@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kocham Cię Ola</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: pink;
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+        }
+        h1 {
+            font-size: 4em;
+            color: red;
+            margin: 0;
+            text-shadow: 2px 2px 5px #000;
+            z-index: 1;
+        }
+        .hearts {
+            font-size: 2em;
+            margin: 20px 0;
+            z-index: 1;
+        }
+        .photo {
+            margin-top: 20px;
+            z-index: 1;
+        }
+        .photo img {
+            max-width: 60%;
+            height: auto;
+            border: 5px solid red;
+            border-radius: 10px;
+        }
+        audio {
+            margin-top: 20px;
+            z-index: 1;
+        }
+        .heart {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            transform: rotate(45deg);
+            left: 50%;
+            top: 50%;
+            animation: float 5s infinite;
+        }
+        .heart::before,
+        .heart::after {
+            content: "";
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            border-radius: 50%;
+        }
+        .heart::before {
+            top: -25px;
+            left: 0;
+        }
+        .heart::after {
+            left: -25px;
+            top: 0;
+        }
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(45deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-800px) rotate(45deg);
+                opacity: 0;
+            }
+        }
+        .heart:nth-child(2) { left: 20%; animation-duration: 4s; background-color: yellow; }
+        .heart:nth-child(3) { left: 70%; animation-duration: 6s; background-color: blue; }
+        .heart:nth-child(4) { left: 40%; animation-duration: 3s; background-color: green; }
+        .heart:nth-child(5) { left: 80%; animation-duration: 5s; background-color: purple; }
+    </style>
+</head>
+<body>
+    <h1>Kocham Cię Olinek miłego dnia buziaki</h1>
+    <div class="hearts">❤️💛💙💚💜❤️💛💙💚💜❤️💛💙💚💜❤️💛💙💚💜❤️💛💙💚💜</div>
+    <div class="photo">
+        <img src="kc.jpg" alt="Wspólne zdjęcie">
+    </div>
+    <div class="hearts">❤️💛💙💚💜❤️💛💙💚💜❤️💛💙💚💜❤️💛💙💚💜❤️💛💙💚💜</div>
+    <audio controls autoplay loop>
+        <source src="sroda.mp3" type="audio/mpeg">
+        Twoja przeglądarka nie obsługuje elementu audio.
+    </audio>
+    <div class="heart"></div>
+    <div class="heart"></div>
+    <div class="heart"></div>
+    <div class="heart"></div>
+    <div class="heart"></div>
+</body>
+</html>
